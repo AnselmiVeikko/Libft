@@ -6,14 +6,12 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 12:19:58 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/16 12:52:59 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:37:11 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalnum(int arg)
 {
-	int	x;
-
 	if ((arg >= 'A' && arg <= 'Z') || (arg >= 'a' && arg <= 'z'))
 		return (1);
 	else if (arg >= '0' && arg <= '9')

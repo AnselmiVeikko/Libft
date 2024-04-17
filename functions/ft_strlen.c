@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 12:36:49 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/17 13:37:05 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/17 13:41:18 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/17 17:15:52 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int arg)
+unsigned int	ft_strlen(const char *str)
 {
-	if ((arg >= 'a' && arg <= 'z') || (arg >= 'A' && arg <= 'Z'))
-		return (1);
-	return (0);
+	size_t	x;
+
+	x = 0;
+	while (str[x] != '\0')
+		x++;
+	return (x);
 }

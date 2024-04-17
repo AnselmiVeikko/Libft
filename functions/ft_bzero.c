@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 12:36:49 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/17 13:37:05 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/17 16:43:11 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/17 17:14:49 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int arg)
+void	ft_bzero(void *str, size_t n)
 {
-	if ((arg >= 'a' && arg <= 'z') || (arg >= 'A' && arg <= 'Z'))
-		return (1);
-	return (0);
+	char	*str1;
+	int		x;
+
+	str1 = (char *) str;
+	x = 0;
+	while (n > 0)
+	{
+		str1[x] = 0;
+		str++;
+		n--;
+	}
 }
+/*
+#include <strings.h>
+#include <stdio.h>
+
+int	main(void)
+{
+	char	str[] = "kenobi";
+	ft_bzero(str, 3);
+	printf("%s", str);
+	return (0);
+}*/
