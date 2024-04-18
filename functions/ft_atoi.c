@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:47:55 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/18 17:21:09 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/18 20:40:38 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,32 @@ int	ft_atoi(const char *str)
 	str1 = (char *) str;
 	i = 0;
 	ret = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
+	minus = 0;
+	while ((str1[i] >= 9 && str1[i] <= 13) || (str1[i] == 32))
 		i++;
-	while (str[i] != '\0')
+	if ((str1[i] == '-') || (str1[i] == '+'))
 	{
-		if (str[i] == '-')
-			minus = 1;
-		while (str[i] >= '0' && str[i] <= '9')
-		{
-			ret *= 10 + str[i] + '0';
-			i++;
-		}
+		if (str1[i] == '-')
+			minus++;
+		i++;
+	}
+	while (str1[i] >= '0' && str1[i] <= '9')
+	{
+		ret = ret * 10 + str1[i] - '0';
+		i++;
 	}
 	if (minus == 1)
 		return (ret * (-1));
 	return (ret);
 }
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
 int	main(void)
 {
-	char	str[] = "2147483648";
+	char	str[] = "	 -21ab47";
 
 	printf("%d\n%d", ft_atoi(str), atoi(str));
 	return (0);
-
-}
+}*/
