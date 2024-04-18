@@ -6,17 +6,15 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:21:04 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/17 18:02:22 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/18 11:48:54 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char		*dest1;
 	const unsigned char	*src1;
-	size_t					x;
+	size_t				x;
 
 	dest1 = (unsigned char *) dest;
 	src1 = (const unsigned char *) src;
