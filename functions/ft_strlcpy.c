@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 17:37:32 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/18 12:31:38 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/18 11:51:15 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/18 13:09:22 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned char		*dest1;
-	const unsigned char	*src1;
-	unsigned int		i;
+	unsigned int	i;
+	unsigned int	srclen;
 
-	dest1 = (unsigned char *) dest;
-	src1 = (const unsigned char *) src;
 	i = 0;
-	if (dest1 >= src1)
+	while (src[i] != '\0')
+		i++;
+	srclen = i;
+	i = 0;
+	while (i < dstsize - 1 && src[i] != '\0')
 	{
-		while (n > 0)
-		{
-			dest1[n - 1] = src1[n - 1];
-			n--;
-		}
+		dst[i] = src[i];
+		i++;
 	}
-	else
-	{
-		while (i < n)
-		{
-			dest1[i] = src1[i];
-			i++;
-		}
-	}
-	return (dest);
+	dst[i] = '\0';
+	return (srclen);
 }
 /*
 #include <stdio.h>
@@ -43,9 +34,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 int	main(void)
 {
-	char str[] = "Hello";
+	char	str[] = "Obiwan man";
+	char	str2[] = "Kenobi";
 
-	//printf("%s", ft_memmove(str + 1, str, 3));
-	printf("%s", memmove(str + 1, str, 3));
+	//ft_strlcpy(str, str2, 7);
+	strlcpy(str, str2, 7);
+	printf("%s", str);
 	return (0);
 }*/
