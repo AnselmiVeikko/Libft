@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 14:38:43 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/18 16:19:54 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/18 14:17:53 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/18 14:43:35 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *str, int c, size_t n)
+char	*ft_strrchr(const char *str, int c)
 {
-	unsigned int	x;
-	char			*str1;
-	unsigned char	c1;
+	int		i;
+	int		x;
+	char	*ret;
 
-	str1 = (char *) str;
-	c1 = (unsigned char) c;
-	x = 0;
-	while (x < n)
+	ret = (char *) str;
+	i = 0;
+	if (c == '\0')
+		return (0);
+	while (ret[i] != '\0')
 	{
-		str1[x] = c;
-		x++;
+		if (ret[i] == c)
+			x = i;
+		i++;
 	}
-	return (str1);
+	return (&ret[x]);
 }
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 #include <string.h>
 
 int	main(void)
 {
-	char			str[] = "123456789";
-	unsigned int	n = 2;
-	printf("%s\n", ft_memset(str, 'q', n));
-	//printf("%s", memset(str, 'q', n));
+	char	str[] = "obi.wank..en..\0.com";
+	char	*result;
+
+	result = ft_strrchr(str, 'n');
+	printf("%s", result);
 	return (0);
-			
 }*/

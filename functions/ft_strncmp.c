@@ -1,40 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 14:38:43 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/18 16:19:54 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/18 14:43:50 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/18 14:58:53 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *str, int c, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	x;
-	char			*str1;
-	unsigned char	c1;
+	unsigned char	*p1;
+	unsigned char	*p2;
+	unsigned int	i;
 
-	str1 = (char *) str;
-	c1 = (unsigned char) c;
-	x = 0;
-	while (x < n)
+	p1 = (unsigned char *) s1;
+	p2 = (unsigned char *) s2;
+	i = 0;
+	while (p1[i] && p2[i] && i < n)
 	{
-		str1[x] = c;
-		x++;
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
+		i++;
 	}
-	return (str1);
+	return (p1[i] - p2[i]);
 }
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 #include <string.h>
 
 int	main(void)
 {
-	char			str[] = "123456789";
-	unsigned int	n = 2;
-	printf("%s\n", ft_memset(str, 'q', n));
-	//printf("%s", memset(str, 'q', n));
+	char	str1[] = "fooo~";
+	char	str2[] = "fooo\0";
+	int		x;
+	int		i;
+
+	x = ft_strncmp(str1, str2, 7);
+	i = strncmp(str1, str2, 7);
+	printf("%d\n%d", x, i);
 	return (0);
-			
 }*/

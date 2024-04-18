@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 14:38:43 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/18 16:19:54 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/18 15:42:21 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/18 16:05:38 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *str, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int	x;
-	char			*str1;
-	unsigned char	c1;
+	unsigned char	*p1;
+	unsigned char	*p2;
+	size_t			i;
 
-	str1 = (char *) str;
-	c1 = (unsigned char) c;
-	x = 0;
-	while (x < n)
+	p1 = (unsigned char *) s1;
+	p2 = (unsigned char *) s2;
+	i = 0;
+	while (p1 && p2 && i < n - 1)
 	{
-		str1[x] = c;
-		x++;
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
+		i++;
 	}
-	return (str1);
+	return (p1[i] - p2[i]);
 }
-/*#include <stdio.h>
+/*
 #include <string.h>
+#include <stdio.h>
 
 int	main(void)
 {
-	char			str[] = "123456789";
-	unsigned int	n = 2;
-	printf("%s\n", ft_memset(str, 'q', n));
-	//printf("%s", memset(str, 'q', n));
+	char	str[] = "apple";
+	char	str2[] = "applb";
+	int		x;
+
+	x = memcmp(str, str2, 5);
+	printf("%d", x);
 	return (0);
-			
 }*/
