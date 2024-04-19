@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 15:16:58 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 16:19:22 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/19 15:52:01 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/19 16:20:42 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-int	main(void)
+char	*ft_strdup(const char *str)
 {
-	char	str[] = "2147483647";
+	char	*str1;
+	int		i;
 
-	printf("%s", strdup(str));
-	return (0);
+	i = 0;
+	str1 = (char *)malloc (sizeof(char) * (ft_strlen(str) + 1));
+	if (str1 == 0)
+		return (NULL);
+	while (str[i] != '\0')
+	{
+		str1[i] = str[i];
+		i++;
+	}
+	str1[i] = '\0';
+	return (str1);
 }
