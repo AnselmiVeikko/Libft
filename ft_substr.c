@@ -1,24 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 15:16:58 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 16:57:01 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/19 16:21:47 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/19 16:44:35 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-int	main(void)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	str[] = "Obiwan-";
-	char	str2[] ="Kenobi";
+	char				*str;
+	unsigned int		i;
+	int					slen;
 
-	printf("%s", ft_strjoin(str, str2));
-	return (0);
+	i = start;
+	slen = 0;
+	while (s[i] != '\0')
+	{
+		slen++;
+		i++;
+	}
+	str = malloc (sizeof (char) * (slen) + 1);
+	if (str == 0)
+		return (0);
+	i = 0;
+	while (s[start] != '\0' && i < len)
+	{
+		str[i] = s[start];
+		i++;
+		start++;
+	}
+	str[i] = '\0';
+	return (str);
 }

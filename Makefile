@@ -6,7 +6,7 @@
 #    By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 12:42:55 by ahentton          #+#    #+#              #
-#    Updated: 2024/04/19 15:58:00 by ahentton         ###   ########.fr        #
+#    Updated: 2024/04/19 16:53:52 by ahentton         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ SRCS = ft_atoi.c \
 	   ft_tolower.c \
 	   ft_toupper.c \
 	   ft_strdup.c \
+	   ft_substr.c \
+	   ft_strjoin.c \
 	   main.c \
 
 
