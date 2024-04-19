@@ -6,9 +6,11 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 12:43:34 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/17 13:40:55 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:42:47 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int	ft_isprint(int arg)
 {

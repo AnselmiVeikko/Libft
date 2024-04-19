@@ -6,9 +6,11 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:38:43 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/18 16:19:54 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:46:41 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 void	*ft_memset(void *str, int c, size_t n)
 {

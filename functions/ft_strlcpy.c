@@ -6,9 +6,11 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:51:15 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/18 13:09:22 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:50:22 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

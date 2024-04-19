@@ -6,10 +6,12 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:47:55 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 10:18:32 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:01:32 by ahentton         ###   ########.fr       */
 /*   Updated: 2024/04/18 20:40:38 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int	ft_atoi(const char *str)
 {

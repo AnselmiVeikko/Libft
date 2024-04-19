@@ -6,9 +6,11 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:21:04 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/18 11:48:54 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:48:08 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

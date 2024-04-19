@@ -6,9 +6,11 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:06:16 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 10:17:46 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:59:04 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {

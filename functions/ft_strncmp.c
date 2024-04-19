@@ -6,9 +6,11 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:43:50 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/18 14:58:53 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:58:08 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

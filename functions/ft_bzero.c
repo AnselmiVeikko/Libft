@@ -6,9 +6,11 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:43:11 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/17 17:14:49 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:47:33 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 void	ft_bzero(void *str, size_t n)
 {

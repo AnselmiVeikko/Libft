@@ -6,9 +6,11 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:36:49 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/17 13:37:05 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:40:22 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int	ft_isalpha(int arg)
 {

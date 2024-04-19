@@ -6,11 +6,13 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:41:18 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/17 17:15:52 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:44:06 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(const char *str)
+#include <libft.h>
+
+size_t	ft_strlen(const char *str)
 {
 	size_t	x;
 
