@@ -6,11 +6,11 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:02:14 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 10:45:17 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:15:32 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_tolower(char c)
 {

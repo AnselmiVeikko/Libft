@@ -6,11 +6,11 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:49:51 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 10:41:12 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:13:07 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isdigit(int arg)
 {
