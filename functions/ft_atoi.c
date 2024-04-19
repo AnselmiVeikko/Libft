@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:47:55 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 11:20:02 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:21:51 by ahentton         ###   ########.fr       */
 /*   Updated: 2024/04/18 20:40:38 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -41,7 +41,7 @@ int	ft_atoi(const char *str)
 		return (ret * (-1));
 	return (ret);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -50,4 +50,4 @@ int	main(void)
 
 	printf("%d\n%d", ft_atoi(str), atoi(str));
 	return (0);
-}
+}*/
