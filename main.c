@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:16:58 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 16:57:01 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:39:21 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 int	main(void)
 {
-	char	str[] = "Obiwan-";
-	char	str2[] ="Kenobi";
+	char	str[] = "mercury_) ";
+	char	str2[] ="_;)_";
 
-	printf("%s", ft_strjoin(str, str2));
+	printf("%s", ft_strtrim(str, str2));
 	return (0);
 }

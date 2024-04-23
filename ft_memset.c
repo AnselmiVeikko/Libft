@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:38:43 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 11:14:08 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:42:25 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ void	*ft_memset(void *str, int c, size_t n)
 {
 	unsigned int	x;
 	char			*str1;
-	unsigned char	c1;
 
 	str1 = (char *) str;
-	c1 = (unsigned char) c;
 	x = 0;
 	while (x < n)
 	{
