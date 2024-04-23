@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:16:58 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/23 14:03:47 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/23 19:23:10 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,16 @@
 
 int	main(void)
 {
-	char	str[] = "m;er;cu;;));__;;__)ry_) ";
-	char	str2[] ="_ ;em)_";
+	char	str[] = "nice one brotherus";
+	char	**result;
+	int		i;
 
-	printf("%s", ft_strtrim(str, str2));
+	i = 0;
+	result = ft_split(str, ' ');
+	while (i < 3)
+	{
+		printf("%s\n", result[i]);
+		i++;
+	}
 	return (0);
 }

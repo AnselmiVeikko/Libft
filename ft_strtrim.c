@@ -6,13 +6,13 @@
 /*   By: ahentton <ahentton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 18:43:40 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/23 14:09:42 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:14:42 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_checkset(char c, char const *set)
+static int	ft_isset(char c, char const *set)
 {
 	int	i;
 
@@ -26,45 +26,29 @@ static int	ft_checkset(char c, char const *set)
 	return (0);
 }
 
-static int	ft_getlength(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (s1[i + j])
-	{
-		if (ft_checkset(s1[i + j], set))
-			j++;
-		else
-			i++;
-	}
-	return (i);
-}
-
-char	*ft_strtrim(char const *oldstr, char const *set)
-{
-	char	*newstr;
+	char	*ret;
+	int		start;
+	int		end;
 	int		index;
-	int		index2;
 
+	start = 0;
+	end = 0;
 	index = 0;
-	index2 = 0;
 	if (set == 0)
-		return ((char *) oldstr);
-	newstr = malloc (sizeof (char) * (ft_getlength(oldstr, set) + 1));
-	if (newstr == 0)
+		return ((char *) s1);
+	while (ft_isset(s1[start], set))
+		start++;
+	while (s1[end + 1])
+		end++;
+	while (ft_isset(s1[end], set))
+		end--;
+	ret = malloc (sizeof (char) * (end - start));
+	if (ret == 0)
 		return (0);
-	while (oldstr[index] != '\0')
-	{
-		if (!ft_checkset(oldstr[index], set))
-		{
-			newstr[index2] = oldstr[index];
-			index2++;
-		}
-		index++;
-	}
-	newstr[index2] = '\0';
-	return (newstr);
+	while (start <= end)
+		ret[index++] = s1[start++];
+	ret[index] = '\0';
+	return (ret);
 }
