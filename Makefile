@@ -6,7 +6,7 @@
 #    By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 12:42:55 by ahentton          #+#    #+#              #
-#    Updated: 2024/04/23 16:31:00 by ahentton         ###   ########.fr        #
+#    Updated: 2024/04/24 18:16:16 by ahentton         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,6 @@ SRCS = ft_atoi.c \
 	   ft_substr.c \
 	   ft_strjoin.c \
 	   ft_split.c \
-	   main.c \
 
 
 HEAD = libft.h
@@ -58,7 +57,8 @@ OBJS = ${SRCS:.c=.o}
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	cc ${CFLAGS} $^ -o $@
+	${AR} ${NAME} ${OBJS}
+	${LIB} ${NAME}
 
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
