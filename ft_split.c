@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:38:34 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/24 19:07:15 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/24 19:17:19 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	**ft_split(char const *str, char c)
 			str++;
 		if (*str)
 		{
-			if (!ft_strchr(str, c))
+			if (ft_strchr(str, c) == 0)
 				word_len = ft_strlen(str);
 			else
 				word_len = ft_strchr(str, c) - str;
