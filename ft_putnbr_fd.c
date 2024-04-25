@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 17:37:32 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/25 19:05:57 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/25 18:13:34 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/25 18:31:23 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char		*dest1;
-	const unsigned char	*src1;
-	unsigned int		i;
+	char	*res;
+	int		i;
 
-	dest1 = (unsigned char *) dest;
-	src1 = (const unsigned char *) src;
 	i = 0;
-	if (!dest1 && !src1)
-		return (0);
-	if (dest1 >= src1)
+	if (n == 0)
 	{
-		while (n > 0)
-		{
-			dest1[n - 1] = src1[n - 1];
-			n--;
-		}
+		write (fd, "0", 1);
+		return ;
 	}
-	else
+	res = ft_itoa(n);
+	while (res[i] != '\0')
 	{
-		while (i < n)
-		{
-			dest1[i] = src1[i];
-			i++;
-		}
+		write (fd, &res[i], 1);
+		i++;
 	}
-	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:26:50 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/25 18:08:55 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:32:50 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,13 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char *str);
 char	*ft_strchr(const char *str, int c);
+char	*ft_itoa(int n);
 char	*ft_strrchr(const char *str, int c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *str, int fd);
 void	*ft_calloc(size_t count, size_t size);
+void	ft_putendl_fd(char *str, int fd);
+void	ft_putnbr_fd(int n, int fd);
 void	ft_striteri(char *str, void (*f)(unsigned int, char*));
 void	*ft_memset(void *str, int c, size_t n);
 void	ft_bzero(void *str, size_t n);
