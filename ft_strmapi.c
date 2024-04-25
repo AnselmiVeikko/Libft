@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 17:21:04 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/25 13:54:29 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/25 17:01:54 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/25 17:53:49 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
 {
-	unsigned char		*dest1;
-	const unsigned char	*src1;
-	size_t				x;
+	char			*newstr;
+	unsigned int	i;
 
-	dest1 = (unsigned char *) dest;
-	src1 = (const unsigned char *) src;
-	x = 0;
-	if (!src1 && !dest1)
+	i = 0;
+	if (!str)
 		return (0);
-	while (src1[x] != '\0' && n > 0)
+	newstr = (char *)malloc(sizeof(char) * ft_strlen(str) + 1);
+	if (!newstr)
+		return (0);
+	while (str[i] != '\0')
 	{
-		dest1[x] = src1[x];
-		x++;
-		n--;
+		newstr[i] = (*f)(i, str[i]);
+		i++;
 	}
-	dest1[x] = '\0';
-	return (dest1);
+	newstr[i] = '\0';
+	return (newstr);
 }
 /*
-#include <string.h>
 #include <stdio.h>
 
 int	main(void)
 {
-	char	dest[4];
-	char	src[] = "kenobi-obiwan";
-	printf("%s", ft_memcpy(dest, src, strlen(src)));
+	result = ft_strmapi("abcd", );
+	printf("%s", result);
 	return (0);
 }*/

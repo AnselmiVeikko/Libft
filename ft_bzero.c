@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:43:11 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 11:14:21 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:36:49 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_bzero(void *str, size_t n)
 	while (n > 0)
 	{
 		str1[x] = 0;
-		str++;
+		x++;
 		n--;
 	}
 }

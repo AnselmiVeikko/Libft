@@ -6,7 +6,7 @@
 #    By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 12:42:55 by ahentton          #+#    #+#              #
-#    Updated: 2024/04/24 18:16:16 by ahentton         ###   ########.fr        #
+#    Updated: 2024/04/25 18:09:08 by ahentton         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,11 @@ SRCS = ft_atoi.c \
 	   ft_substr.c \
 	   ft_strjoin.c \
 	   ft_split.c \
+	   ft_itoa.c \
+	   ft_strmapi.c \
+	   ft_striteri.c \
+	   ft_putchar_fd.c \
+	   ft_putstr_fd.c \
 
 
 HEAD = libft.h
