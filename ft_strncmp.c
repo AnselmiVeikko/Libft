@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:43:50 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 11:16:09 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:08:45 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			return (p1[i] - p2[i]);
 		i++;
 	}
+	if (i == n)
+		return (0);
 	return (p1[i] - p2[i]);
 }
 /*
@@ -35,13 +37,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int	main(void)
 {
-	char	str1[] = "fooo~";
-	char	str2[] = "fooo\0";
+	char	str1[] = "fumblehumbledumbledore";
 	int		x;
 	int		i;
 
-	x = ft_strncmp(str1, str2, 7);
-	i = strncmp(str1, str2, 7);
+	x = ft_strncmp(str1 + 1, str1, 7);
+	i = strncmp(str1 + 1, str1, 7);
 	printf("%d\n%d", x, i);
 	return (0);
 }*/

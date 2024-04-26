@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:51:15 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 11:14:54 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/26 12:33:36 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	while (src[i] != '\0')
 		i++;
 	srclen = i;
+	if (dstsize == 0)
+		return (srclen);
 	i = 0;
 	while (i < dstsize - 1 && src[i] != '\0')
 	{
@@ -39,8 +41,8 @@ int	main(void)
 	char	str[] = "Obiwan man";
 	char	str2[] = "Kenobi";
 
-	//ft_strlcpy(str, str2, 7);
-	strlcpy(str, str2, 7);
-	printf("%s", str);
+	//ft_strlcpy(str, str2, 0);
+	//strlcpy(str, str2, 0);
+	printf("%zu", ft_strlcpy(str, str2, 0));
 	return (0);
 }*/

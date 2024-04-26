@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:03:24 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/24 18:05:40 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:33:57 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ char	*ft_strchr(const char *str, int c)
 
 	ret = (char *) str;
 	i = 0;
-	while (ret[i] != '\0')
+	while (ret[i])
 	{
-		if (ret[i] == c)
+		if (ret[i] == (char) c)
 			return (&ret[i]);
 		i++;
 	}
+	if ((char) c == '\0')
+		return (&ret[i]);
 	return (0);
 }
 /*
@@ -36,7 +38,7 @@ int	main(void)
 	char	str[] = "Obiwanken\0com";
 	char	*result;
 
-	result = ft_strchr(str, '\0');
+	result = strchr(str, '\0');
 	printf("%s", result);
 	return (0);
 }*/

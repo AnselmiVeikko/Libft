@@ -6,29 +6,41 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:17:53 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 11:15:58 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:59:30 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	ft_strlength(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
 char	*ft_strrchr(const char *str, int c)
 {
 	int		i;
-	int		x;
 	char	*ret;
 
 	ret = (char *) str;
-	i = 0;
-	if (c == '\0')
-		return (0);
-	while (ret[i] != '\0')
+	i = ft_strlength(ret) - 1;
+	while (i >= 0)
 	{
-		if (ret[i] == c)
-			x = i;
-		i++;
+		if (ret[i] == (char) c)
+			return (&ret[i]);
+		i--;
 	}
-	return (&ret[x]);
+	if ((char) c == '\0')
+	{
+		i = ft_strlength(ret);
+		return (&ret[i]);
+	}
+	return (0);
 }
 /*
 #include <stdio.h>
@@ -36,10 +48,10 @@ char	*ft_strrchr(const char *str, int c)
 
 int	main(void)
 {
-	char	str[] = "obi.wank..en..\0.com";
+	char	str[] = "obiwanke\0nobi";
 	char	*result;
 
-	result = ft_strrchr(str, 'n');
+	result = ft_strrchr(str, '\0');
 	printf("%s", result);
 	return (0);
 }*/

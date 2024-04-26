@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:54:08 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 11:15:05 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:34:16 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,22 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	unsigned int	i;
-	unsigned int	x;
-	unsigned int	srclen;
-	unsigned int	dstlen;
+	unsigned int	j;
 
-	x = 0;
 	i = 0;
-	while (src[i] != '\0')
+	j = 0;
+	while (dst[i] && i < dstsize)
 		i++;
-	srclen = i;
-	i = 0;
-	while (dst[i] != '\0')
-		i++;
-	dstlen = i;
-	while (i < (dstsize - 1))
+	while (src[j] && (i + j + 1) < dstsize)
 	{
-		dst[i] = src[x];
-		i++;
-		x++;
+		dst[i + j] = src[j];
+		j++;
 	}
-	dst[i] = '\0';
-	if (dstlen > dstsize)
-		dstlen = dstsize;
-	return ((srclen + dstlen));
+	if (i + j < dstsize)
+		dst[i + j] = '\0';
+	while (src[j])
+		j++;
+	return (i + j);
 }
 /*
 #include <strings.h>
@@ -46,11 +39,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 int	main(void)
 {
 	char	str[15] = "Obiwan";
-	char	str2[] = "Kenobi";
+	char	str2[] = "Kenobi000";
 	int		x;
 
-	x = ft_strlcat(str, str2, 3);
-	ft_strlcat(str, str2, 3);
+	x = ft_strlcat(str, str2, 0);
+	ft_strlcat(str, str2, 0);
 	printf("%s\n%d", str, x);
 	return (0);
 }*/
