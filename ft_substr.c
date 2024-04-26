@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 16:21:47 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/26 17:03:47 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/26 17:33:29 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/26 17:49:51 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,19 @@ static size_t	ft_strlength(const char *str)
 char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
 	char	*sub;
+	size_t	strlen;
 	size_t	i;
-	size_t	sublen;
 
 	i = 0;
-	sublen = ft_strlength(str + start);
-	if (start >= ft_strlength(str))
-		sublen = 0; //return (ft_strdup("");
-	else if (sublen < len)
-		sublen = len;
-	sub	= malloc(sizeof(char) * (sublen + 1));
+	strlen = ft_strlength(str);
+	if (start >= strlen)
+		return (ft_strdup(""));
+	if (len > strlen - start)
+		len = strlen - start;
+	sub = malloc(sizeof(char) * (len + 1));
 	if (sub == 0)
 		return (0);
-	while (i < sublen && str[start + i])
+	while (i < len && str[start + i])
 	{
 		sub[i] = str[start + i];
 		i++;
@@ -53,8 +53,7 @@ int	main(void)
 	char	str[] = "Obiwan Kenobi";
 	char	*result;
 
-	result = ft_substr(str, 7, 6);
+	result = ft_substr(str, 7, 5);
 	printf("%s", result);
-	free (result);
 	return (0);
 }*/
