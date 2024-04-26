@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:06:16 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 11:16:20 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:23:03 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*str1;
 
 	str1 = (unsigned char *) str;
 	i = 0;
-	while (str1[i] != '\0' && i < n)
+	while (i < n)
 	{
-		if (str1[i] == c)
+		if (str1[i] == (unsigned char) c)
 			return (&str1[i]);
 		i++;
 	}
@@ -35,6 +35,6 @@ int	main(void)
 {
 	char	str[] = "obiwanken.com";
 
-	printf("%s", ft_memchr(str, '.', 10));
+	printf("%s", ft_memchr(str, 0, 0));
 	return (0);
 }*/
