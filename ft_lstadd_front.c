@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 15:14:28 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/29 15:14:33 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/29 15:14:09 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/29 17:36:09 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char	res;
-	long	nb;
-
-	nb = (long) n;
-	if (nb == 0)
-	{
-		write(fd, "0", 1);
+	if (lst == 0)
 		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nb = -nb;
-	}
-	if (nb / 10)
-		ft_putnbr_fd(nb / 10, fd);
-	res = (nb % 10) + '0';
-	write(fd, &res, 1);
+	new->next = *lst;
+	*lst = new;
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	t_list	**res;
+	t_list	*new;
+
+	res = (t_list **)malloc(sizeof(t_list));
+	new = ft_lstnew("hello there");
+	ft_lstadd_front(res, new);
+	printf("%s", res[0]->content);
+	free (res);
+	return (0);
+}*/

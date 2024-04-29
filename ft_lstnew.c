@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 15:14:28 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/29 15:14:33 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/29 14:32:16 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/29 17:31:00 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	char	res;
-	long	nb;
+	t_list	*new;
 
-	nb = (long) n;
-	if (nb == 0)
-	{
-		write(fd, "0", 1);
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nb = -nb;
-	}
-	if (nb / 10)
-		ft_putnbr_fd(nb / 10, fd);
-	res = (nb % 10) + '0';
-	write(fd, &res, 1);
+	new = (t_list *)malloc(sizeof(t_list));
+	if (new == 0)
+		return (0);
+	new->content = content;
+	new->next = 0;
+	return (new);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	t_list	*result;
+	char	str[] = "obiwan";
+
+	result = ft_lstnew(str);
+	if (result != 0)
+	{
+		printf("%s\n%d", (char *)result->content, (int)result->next);
+		free (result);
+	}
+	return (0);
+}*/

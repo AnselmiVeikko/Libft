@@ -6,11 +6,16 @@
 #    By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 12:42:55 by ahentton          #+#    #+#              #
-#    Updated: 2024/04/29 13:41:31 by ahentton         ###   ########.fr        #
+#    Updated: 2024/04/29 17:34:59 by ahentton         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar rcs
+RM = rm -f
 
 SRCS = ft_atoi.c \
 	   ft_bzero.c \
@@ -47,31 +52,37 @@ SRCS = ft_atoi.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c \
 
+SRCS_B = ft_lstnew.c \
+		 ft_lstadd_front.c \
+		 ft_lstsize.c \
+		 ft_lstlast.c \
+		 ft_lstadd_back.c \
+
 
 HEAD = libft.h
 
-AR = ar rcs
-RM = rm -rf
 LIB = ranlib
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
 
 OBJS = ${SRCS:.c=.o}
 
-.PHONY: all clean fclean re
+OBJS_B = ${SRCS_B:.c=.o}
 
+.PHONY: all clean fclean re bonus
 all: ${NAME}
 
 ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
 	${LIB} ${NAME}
 
+bonus: ${OBJS_B}
+	${AR} ${NAME} ${OBJS_B}
+
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${OBJS_B}
 
 fclean: clean
 	${RM} ${NAME}

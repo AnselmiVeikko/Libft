@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 15:14:28 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/29 15:14:33 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/29 17:10:21 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/29 17:39:41 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	res;
-	long	nb;
-
-	nb = (long) n;
-	if (nb == 0)
+	if (lst == 0)
+		return (0);
+	while (lst)
 	{
-		write(fd, "0", 1);
-		return ;
+		if (lst->next == 0)
+			return (lst);
+		lst = lst->next;
 	}
-	if (nb < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nb = -nb;
-	}
-	if (nb / 10)
-		ft_putnbr_fd(nb / 10, fd);
-	res = (nb % 10) + '0';
-	write(fd, &res, 1);
+	return (lst);
 }
