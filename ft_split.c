@@ -6,13 +6,13 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:38:34 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/24 19:17:19 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:38:09 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_wordcount(char const *str, char c)
+static size_t	ft_wordcount(char const *str, char c)
 {
 	size_t	count;
 	int		i;
@@ -33,11 +33,29 @@ size_t	ft_wordcount(char const *str, char c)
 	return (count);
 }
 
+static int	ft_memcheck(char **arr, size_t i)
+{
+	size_t	j;
+
+	j = 0;
+	if (arr[i] == 0)
+	{
+		while (i >= j)
+		{
+			free (arr[j]);
+			j++;
+		}
+		free (arr);
+		return (0);
+	}
+	return (1);
+}
+
 char	**ft_split(char const *str, char c)
 {
 	char	**ret;
 	size_t	word_len;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	ret = (char **)malloc (sizeof(char *) * (ft_wordcount(str, c) + 1));
@@ -49,13 +67,13 @@ char	**ft_split(char const *str, char c)
 			str++;
 		if (*str)
 		{
+			word_len = ft_strchr(str, c) - str;
 			if (ft_strchr(str, c) == 0)
 				word_len = ft_strlen(str);
-			else
-				word_len = ft_strchr(str, c) - str;
-			ret[i] = ft_substr(str, 0, word_len);
+			ret[i++] = ft_substr(str, 0, word_len);
+			if (ft_memcheck(ret, i - 1) == 0)
+				return (0);
 			str += word_len;
-			i++;
 		}
 	}
 	ret[i] = 0;

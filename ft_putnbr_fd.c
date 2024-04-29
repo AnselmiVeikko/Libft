@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   putnbr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 18:13:34 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/25 18:31:23 by ahentton         ###   ########.fr       */
+/*   Created: 2024/04/29 13:40:49 by ahentton          #+#    #+#             */
+/*   Updated: 2024/04/29 13:43:56 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*res;
-	int		i;
+	char	res;
+	long	nb;
 
-	i = 0;
-	if (n == 0)
+	nb = (long) n;
+	if (nb == 0)
 	{
-		write (fd, "0", 1);
+		write(fd, "0", 1);
 		return ;
 	}
-	res = ft_itoa(n);
-	while (res[i] != '\0')
+	if (nb < 0)
 	{
-		write (fd, &res[i], 1);
-		i++;
+		ft_putchar_fd('-', fd);
+		nb = -nb;
 	}
+	if (nb / 10)
+		ft_putnbr_fd(nb / 10, fd);
+	res = (nb % 10) + '0';
+	write(fd, &res, 1);
 }
