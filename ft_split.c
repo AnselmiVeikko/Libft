@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:38:34 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/29 15:30:12 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/05/02 18:36:07 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,3 +79,17 @@ char	**ft_split(char const *str, char c)
 	ret[i] = 0;
 	return (ret);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char const	str[] = "I will split   this  string";
+	char		set = ' ';
+	int			i = 0;
+	char		**ret = ft_split(str, set);
+
+	while (i < 5)
+		printf("%s\n", ret[i++]);
+	return (0);
+}*/

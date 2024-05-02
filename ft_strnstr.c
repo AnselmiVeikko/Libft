@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:05:54 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/26 15:53:11 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/05/02 18:09:38 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	char	*stack;
 	char	*find;
 	size_t	i;
-	size_t	x;
+	size_t	j;
 
 	stack = (char *) haystack;
 	find = (char *) needle;
@@ -26,10 +26,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return (stack);
 	while (stack[i] && i < len)
 	{
-		x = 0;
-		while (stack[i + x] == find[x] && find[x] && (i + x) < len)
-			x++;
-		if (find[x] == '\0')
+		j = 0;
+		while (stack[i + j] == find[j] && find[j] && (i + j) < len)
+			j++;
+		if (find[j] == '\0')
 			return (stack + i);
 		i++;
 	}

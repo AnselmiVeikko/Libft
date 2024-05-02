@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:47:55 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 12:40:18 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/05/02 18:09:46 by ahentton         ###   ########.fr       */
 /*   Updated: 2024/04/18 20:40:38 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -15,31 +15,29 @@
 
 int	ft_atoi(const char *str)
 {
-	char	*str1;
 	int		i;
-	int		ret;
-	int		minus;
+	int		sign;
+	long	ret;
+	long	check;
 
-	str1 = (char *) str;
 	i = 0;
 	ret = 0;
-	minus = 0;
-	while ((str1[i] >= 9 && str1[i] <= 13) || (str1[i] == 32))
+	sign = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
 		i++;
-	if ((str1[i] == '-') || (str1[i] == '+'))
+	if ((str[i] == '-') || (str[i] == '+'))
+		if (str[i++] == '-')
+			sign = -1;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (str1[i] == '-')
-			minus++;
-		i++;
+		check = ret;
+		ret = ret * 10 + str[i++] - '0';
+		if (check > ret && sign == 1)
+			return (-1);
+		if (check > ret && sign == -1)
+			return (0);
 	}
-	while (str1[i] >= '0' && str1[i] <= '9')
-	{
-		ret = ret * 10 + str1[i] - '0';
-		i++;
-	}
-	if (minus == 1)
-		return (ret * (-1));
-	return (ret);
+	return ((int)(ret * sign));
 }
 /*
 #include <stdio.h>

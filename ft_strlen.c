@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:41:18 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 11:13:55 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/05/02 17:55:59 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t	x;
+	size_t	i;
 
-	x = 0;
-	while (str[x] != '\0')
-		x++;
-	return (x);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

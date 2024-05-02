@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 12:28:35 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/19 11:13:31 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/05/02 17:54:44 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 
 int	ft_isascii(int arg)
 {
-	int	x;
-
 	if ((arg >= '\0' && arg <= '~') || (arg == 127))
-		x = 1;
-	else
-		x = 0;
-	return (x);
+		return (1);
+	return (0);
 }

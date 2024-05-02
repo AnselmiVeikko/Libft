@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 18:43:40 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/29 11:25:38 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/05/02 18:18:34 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*ret;
 	int		start;
 	int		end;
-	int		index;
+	int		i;
 
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	index = 0;
+	i = 0;
 	if (set == 0)
 		return ((char *) s1);
 	while (ft_isset(s1[start], set))
@@ -48,8 +48,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (ret == 0)
 		return (0);
 	while (start <= end)
-		ret[index++] = s1[start++];
-	ret[index] = '\0';
+		ret[i++] = s1[start++];
+	ret[i] = '\0';
 	return (ret);
 }
 /*
