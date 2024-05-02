@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 14:32:16 by ahentton          #+#    #+#             */
-/*   Updated: 2024/04/29 17:31:00 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/05/02 16:35:28 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(void)
 	result = ft_lstnew(str);
 	if (result != 0)
 	{
-		printf("%s\n%d", (char *)result->content, (int)result->next);
+		printf("%s\n%d", (char *)result->content, (int)sizeof(t_list));
 		free (result);
 	}
 	return (0);
