@@ -6,7 +6,7 @@
 #    By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 12:42:55 by ahentton          #+#    #+#              #
-#    Updated: 2024/05/06 11:24:05 by ahentton         ###   ########.fr        #
+#    Updated: 2024/05/06 11:35:00 by ahentton         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ SRCS = ft_atoi.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c \
 
-SRCS_B = ft_lstnew_bonus.c \
+BONUS_SRCS = ft_lstnew_bonus.c \
 		 ft_lstadd_front_bonus.c \
 		 ft_lstsize_bonus.c \
 		 ft_lstlast_bonus.c \
