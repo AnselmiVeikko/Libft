@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:54:08 by ahentton          #+#    #+#             */
-/*   Updated: 2024/05/02 18:01:38 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:27:43 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	unsigned int	i;
 	unsigned int	j;
 
+	if ((!dst) || (!src && !dstsize))
+		return (0);
 	i = 0;
 	j = 0;
 	while (dst[i] && i < dstsize)

@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 17:33:29 by ahentton          #+#    #+#             */
-/*   Updated: 2024/05/02 18:33:06 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:50:13 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	strlen = ft_strlength(str);
 	if (start >= strlen)
 		return (ft_strdup(""));

@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:38:34 by ahentton          #+#    #+#             */
-/*   Updated: 2024/05/02 18:59:37 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:30:48 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,25 +51,41 @@ static int	ft_memcheck(char **arr, size_t i)
 	return (1);
 }
 
+static	char	*ft_passdiv(char const *str, char c)
+{
+	while (*str == c && *str)
+		str++;
+	return ((char *)str);
+}
+
+static	size_t	ft_wordlen(char const *str, char c)
+{
+	size_t	wordlen;
+
+	wordlen = ft_strchr(str, c) - str;
+	if (ft_strchr(str, c) == 0)
+		wordlen = ft_strlen(str);
+	return (wordlen);
+}
+
 char	**ft_split(char const *str, char c)
 {
 	char	**ret;
 	size_t	word_len;
 	size_t	i;
 
+	if (!str)
+		return (NULL);
 	i = 0;
 	ret = (char **)malloc (sizeof(char *) * (ft_wordcount(str, c) + 1));
 	if ((str == 0) || (ret == 0))
 		return (0);
 	while (*str)
 	{
-		while (*str == c && *str)
-			str++;
+		str = ft_passdiv(str, c);
 		if (*str)
 		{
-			word_len = ft_strchr(str, c) - str;
-			if (ft_strchr(str, c) == 0)
-				word_len = ft_strlen(str);
+			word_len = ft_wordlen(str, c);
 			ret[i++] = ft_substr(str, 0, word_len);
 			if (ft_memcheck(ret, i - 1) == 0)
 				return (0);

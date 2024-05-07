@@ -6,7 +6,7 @@
 /*   By: ahentton <ahentton@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:48:33 by ahentton          #+#    #+#             */
-/*   Updated: 2024/05/02 18:58:18 by ahentton         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:53:56 by ahentton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_striteri(char *str, void (*f)(unsigned int, char*))
 	unsigned int	i;
 
 	i = 0;
+	if (!str)
+		return ;
 	while (str[i])
 	{
 		f(i, &str[i]);
@@ -34,7 +36,7 @@ void	ft_striteri(char *str, void (*f)(unsigned int, char*))
 
 int	main(void)
 {
-	char	str[] = "ABCDEFG";
+	char	*str = NULL;
 
 	ft_striteri(str, ft_lowercase);
 	printf("%s", str);
