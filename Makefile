@@ -15,8 +15,7 @@ OBJS	:= ${SRCS:.c=.o}
 HEADERS	:= -I ./include
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror ${HEADERS}
-
+CFLAGS = -Wall -Wextra -Werror ${HEADERS} -fPIC
 NAME = libft.a
 CRLIB = ar rcs
 
