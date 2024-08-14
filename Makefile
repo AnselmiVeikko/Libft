@@ -24,9 +24,9 @@ GREEN := \033[0;32m
 NC := \033[0m
 
 ${NAME} : ${OBJS}
-	@echo -e "${GREEN}Compiling Libft...${NC}"
+	@echo -e "${GREEN}[LIBFT]Compiling...${NC}"
 	@${CRLIB} ${NAME} ${OBJS}
-	@echo -e "${GREEN}Libft Compiled Succesfully.${NC}"
+	@echo -e "${GREEN}[LIBFT]Compiled Succesfully!${NC}"
 
 all: ${NAME}
 
