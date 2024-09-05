@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -66,5 +68,31 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
+
+int		ft_printstr(char *str);
+int		ft_printchar(int c);
+int		ft_printnbr(int n);
+int		ft_printper(void);
+int		ft_print_ui(unsigned int n);
+int		ft_printhex(const char form, unsigned int n);
+int		ft_printptr(void *ptr);
+int		ft_printf(const char *s, ...);
+char	*ft_uitoa(unsigned int n);
+char	*ft_hextoa(unsigned int n, char *str);
+
+char	*get_next_line(int fd);
+char	*gnl_strjoin(char *s1, char *s2);
+int		gnl_findnl(const char *str, char c);
+void	*gnl_calloc(size_t count, size_t size);
+void	*free_null(char **str, char **str2);
+size_t	gnl_strlen(const char *str);
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 256
+# endif
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 3
+# endif
 
 #endif
