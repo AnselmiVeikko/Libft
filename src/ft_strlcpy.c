@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -32,17 +32,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (srclen);
 }
-/*
-#include <stdio.h>
-#include <strings.h>
-
-int	main(void)
-{
-	char	str[] = "Obiwan man";
-	char	str2[] = "Kenobi";
-
-	//ft_strlcpy(str, str2, 0);
-	//strlcpy(str, str2, 0);
-	printf("%zu", ft_strlcpy(str, str2, 0));
-	return (0);
-}*/

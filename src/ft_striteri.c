@@ -10,14 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-/*
-static	void	ft_lowercase(unsigned int i, char *str)
-{
-	i = 32;
-	*str = *str + i;
-}
-*/
+#include "../include/libft.h"
+
 void	ft_striteri(char *str, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
@@ -31,14 +25,3 @@ void	ft_striteri(char *str, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*str = NULL;
-
-	ft_striteri(str, ft_lowercase);
-	printf("%s", str);
-	return (0);
-}*/

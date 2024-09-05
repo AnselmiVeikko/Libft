@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 static int	ft_nblen(int n)
 {
@@ -66,13 +66,3 @@ char	*ft_itoa(int n)
 	ft_convert(n, ret, checkminus);
 	return (ret);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*result;
-
-	result = ft_itoa(-2147483648);
-	printf("%s", result);
-}*/

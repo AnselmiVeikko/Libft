@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 char	*ft_strchr(const char *str, int c)
 {
@@ -29,16 +29,3 @@ char	*ft_strchr(const char *str, int c)
 		return (&ret[i]);
 	return (0);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	char	str[] = "Obiwanken\0com";
-	char	*result;
-
-	result = strchr(str, '\0');
-	printf("%s", result);
-	return (0);
-}*/

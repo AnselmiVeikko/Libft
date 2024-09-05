@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 static size_t	ft_strlength(const char *str)
 {
@@ -47,15 +47,3 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	str[] = "Obiwan Kenobi";
-	char	*result;
-
-	result = ft_substr(str, 7, 5);
-	printf("%s", result);
-	return (0);
-}*/

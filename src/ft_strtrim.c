@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 static int	ft_isset(char c, char const *set)
 {
@@ -52,15 +52,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ret[i] = '\0';
 	return (ret);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*result;
-	char	set[] = " \t\n";
-
-	result = ft_strtrim(" \t \t \n  \n\n\n\t", set);
-	printf("%s", result);
-	return (0);
-}*/

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 static size_t	ft_wordcount(char const *str, char c)
 {
@@ -95,17 +95,3 @@ char	**ft_split(char const *str, char c)
 	ret[i] = 0;
 	return (ret);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char const	str[] = "I will split   this  string";
-	char		set = ' ';
-	int			i = 0;
-	char		**ret = ft_split(str, set);
-
-	while (i < 5)
-		printf("%s\n", ret[i++]);
-	return (0);
-}*/

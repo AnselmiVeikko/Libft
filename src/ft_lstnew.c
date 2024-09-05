@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
@@ -23,19 +23,3 @@ t_list	*ft_lstnew(void *content)
 	new->next = 0;
 	return (new);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	t_list	*result;
-	char	str[] = "obiwan";
-
-	result = ft_lstnew(str);
-	if (result != 0)
-	{
-		printf("%s\n%d", (char *)result->content, (int)sizeof(t_list));
-		free (result);
-	}
-	return (0);
-}*/

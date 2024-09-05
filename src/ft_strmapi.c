@@ -10,17 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-/*
-static	char	ft_uppercase(unsigned int i, char c)
-{
-	char	ret;
+#include "../include/libft.h"
 
-	i = 32;
-	ret = c - i;
-	return (ret);
-}
-*/
 char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
 {
 	char			*newstr;
@@ -40,15 +31,3 @@ char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
 	newstr[i] = '\0';
 	return (newstr);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*result;
-	char	str[] = "abcdefg";
-
-	result = ft_strmapi(str, ft_uppercase );
-	printf("%s\n%s", str, result);
-	return (0);
-}*/

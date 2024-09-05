@@ -11,8 +11,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_atoi(const char *str)
 {
 	int		i;
@@ -39,13 +37,3 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)(ret * sign));
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	str[] = "	 -21ab47";
-
-	printf("%d\n%d", ft_atoi(str), atoi(str));
-	return (0);
-}*/

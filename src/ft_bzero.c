@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 void	ft_bzero(void *str, size_t n)
 {
@@ -26,14 +26,3 @@ void	ft_bzero(void *str, size_t n)
 		n--;
 	}
 }
-/*
-#include <strings.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	char	str[] = "kenobi";
-	ft_bzero(str, 3);
-	printf("%s", str);
-	return (0);
-}*/

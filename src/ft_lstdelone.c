@@ -10,13 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-/*
-static	void	ft_freecont(void *content)
-{
-	free (content);
-}
-*/
+#include "../include/libft.h"
+
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (!del || !lst)
@@ -28,15 +23,3 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 		lst = 0;
 	}
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	t_list	*node;
-
-	node = ft_lstnew("Delthis");
-	ft_lstdelone(node, ft_freecont);
-	printf("%s", node->content);
-	return (0);
-}*/

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
@@ -27,14 +27,3 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	}
 	return (0);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	char	str[] = "obiwanken.com";
-
-	printf("%s", ft_memchr(str, 0, 0));
-	return (0);
-}*/

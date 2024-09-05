@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 static size_t	ft_strlength(const char *str)
 {
@@ -42,16 +42,3 @@ char	*ft_strrchr(const char *str, int c)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	char	str[] = "obiwanke\0nobi";
-	char	*result;
-
-	result = ft_strrchr(str, '\0');
-	printf("%s", result);
-	return (0);
-}*/

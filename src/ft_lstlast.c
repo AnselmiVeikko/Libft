@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
@@ -20,27 +20,3 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	t_list	*test1;
-	t_list	*test2;
-	t_list	*test3;
-	t_list	*result;
-
-	test1 = ft_lstnew("nice");
-	test2 = ft_lstnew("one");
-	test3 = ft_lstnew("brudda");
-	
-	test1->next = test2;
-	test2->next = test3;
-
-	result = ft_lstlast(test1);
-	printf("%s", result->content);
-	free (test1);
-	free (test2);
-	free (test3);
-	return (0);
-}*/

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -34,18 +34,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		j++;
 	return (i + j);
 }
-/*
-#include <strings.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	char	str[15] = "Obiwan";
-	char	str2[] = "Kenobi000";
-	int		x;
-
-	x = ft_strlcat(str, str2, 0);
-	ft_strlcat(str, str2, 0);
-	printf("%s\n%d", str, x);
-	return (0);
-}*/
