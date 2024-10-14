@@ -12,34 +12,34 @@
 
 #include "../include/libft.h"
 
-static char	*ft_revmove(char *dest, const char *src, size_t n)
+static void	*ft_revmove(unsigned char *dst, const unsigned char *src, size_t n)
 {
 	while (n > 0)
 	{
-		dest[n - 1] = src[n - 1];
+		dst[n - 1] = src[n - 1];
 		n--;
 	}
-	return (dest);
+	return (dst);
 }
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char		*dest1;
-	const char	*src1;
-	size_t		i;
+	unsigned char		*dest;
+	const unsigned char	*source;
+	size_t				i;
 
-	dest1 = (char *) dest;
-	src1 = (const char *) src;
+	dest = (unsigned char *) dst;
+	source = (const unsigned char *) src;
 	i = 0;
-	if (!dest1 && !src1)
+	if (!dest && !source)
 		return (0);
-	if (dest1 >= src1)
-		dest1 = ft_revmove(dest1, src1, n);
+	if (dest >= source)
+		dest = ft_revmove(dest, source, n);
 	else
 	{
 		while (i < n)
 		{
-			dest1[i] = src1[i];
+			dest[i] = source[i];
 			i++;
 		}
 	}
