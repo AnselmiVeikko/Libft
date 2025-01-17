@@ -65,6 +65,7 @@ SRCS = ./src/ft_atoi.c \
        ./src/ft_memmove.c \
        ./src/ft_lstsize.c \
        ./src/ft_lstlast.c \
+
 OBJS	:= ${SRCS:.c=.o}
 HEADERS	:= -I ./include
 
@@ -74,7 +75,7 @@ NC := \033[0m
 
 all: ${NAME}
 
-.c.o:
+%.o: %.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 ${NAME} : ${OBJS}
